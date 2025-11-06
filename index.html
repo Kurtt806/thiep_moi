@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiệp Mời Đám Thôi Nôi - Bé Trai Miền Tây</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,7 +19,11 @@
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #a8cef1 0%, #d4e4f7 100%);
+            background: linear-gradient(135deg, #b8e0f6 0%, #e8f4f8 50%, #ffffff 100%);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 224, 246, 0.4) 0%, transparent 50%),
+                linear-gradient(135deg, #b8e0f6 0%, #e8f4f8 50%, #ffffff 100%);
             min-height: 100vh;
             padding: 20px;
             overflow-x: hidden;
@@ -32,11 +41,12 @@
 
         /* Header Section */
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            padding: 40px 20px;
+            background: linear-gradient(180deg, #a8d8f0 0%, #d4ebf7 100%);
+            padding: 50px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 3px dashed rgba(79, 172, 254, 0.3);
         }
 
         .header::before {
@@ -45,122 +55,50 @@
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 30px;
+            font-size: 40px;
             animation: float 3s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: "🎉🥑🎊🥑🎉";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
         }
 
         .header h1 {
             font-family: 'Baloo 2', cursive;
-            color: white;
-            font-size: 48px;
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            animation: bounce 2s ease-in-out infinite;
+            color: #2b8fcc;
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            letter-spacing: 2px;
         }
 
         .header p {
-            color: #fff;
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        /* Story Section */
-        .story-section {
-            padding: 40px 30px;
-            background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
-            text-align: center;
-        }
-
-        .story-title {
-            font-family: 'Baloo 2', cursive;
-            font-size: 36px;
-            color: #1e5fa8;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .story-title::before,
-        .story-title::after {
-            content: "⭐";
-            position: absolute;
-            font-size: 24px;
-            animation: twinkle 1.5s ease-in-out infinite;
-        }
-
-        .story-title::before {
-            left: -40px;
-            top: 0;
-        }
-
-        .story-title::after {
-            right: -40px;
-            top: 0;
-            animation-delay: 0.5s;
-        }
-
-        .story-content {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            line-height: 2;
-            font-size: 18px;
             color: #555;
-            text-align: left;
-        }
-
-        .story-content p {
-            margin-bottom: 15px;
-        }
-
-        .story-content strong {
-            color: #4facfe;
             font-size: 20px;
-        }
-
-        /* Baby Info Section */
-        .baby-info {
-            padding: 40px 30px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .baby-name {
-            font-family: 'Baloo 2', cursive;
-            font-size: 56px;
-            color: #4facfe;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .baby-details {
-            font-size: 22px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .baby-details span {
-            display: inline-block;
-            margin: 10px 20px;
             font-weight: 600;
-            color: #1e5fa8;
+            line-height: 1.6;
         }
+
+
 
         /* Gallery Section */
         .gallery {
             padding: 60px 20px;
-            background: linear-gradient(to bottom, #a8cef1 0%, #d4e4f7 100%);
+            background: linear-gradient(to bottom, #e8f4f8 0%, #ffffff 100%);
         }
 
         .gallery-title {
             font-family: 'Baloo 2', cursive;
             font-size: 36px;
-            color: #1e5fa8;
+            color: #2b8fcc;
             text-align: center;
             margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-grid {
@@ -192,13 +130,14 @@
         }
 
         .cute-quote {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+            box-shadow: 0 8px 20px rgba(43, 143, 204, 0.15);
+            border: 2px solid rgba(168, 216, 240, 0.3);
             position: relative;
             font-size: 20px;
-            color: #1e5fa8;
+            color: #2b8fcc;
             line-height: 1.8;
             font-family: 'Baloo 2', cursive;
         }
@@ -209,8 +148,8 @@
             top: -10px;
             left: 20px;
             font-size: 80px;
-            color: #4facfe;
-            opacity: 0.3;
+            color: #a8d8f0;
+            opacity: 0.4;
             line-height: 1;
         }
 
@@ -236,6 +175,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -246,13 +186,13 @@
             position: relative;
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(43, 143, 204, 0.25);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             width: 100%;
             height: 350px;
-            border: 5px solid white;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: 6px solid #ffffff;
+            background: linear-gradient(135deg, #b8e0f6 0%, #d4ebf7 100%);
         }
 
         .gallery-item::before {
@@ -270,8 +210,8 @@
 
         .gallery-item:hover {
             transform: translateY(-15px) rotate(3deg) scale(1.05);
-            box-shadow: 0 25px 50px rgba(79, 172, 254, 0.4);
-            border-color: #00f2fe;
+            box-shadow: 0 20px 40px rgba(43, 143, 204, 0.35);
+            border-color: #a8d8f0;
         }
 
         .gallery-item:hover::before {
@@ -297,7 +237,7 @@
         }
 
         .gallery-item::after {
-            content: "💙";
+            content: "🥑";
             position: absolute;
             bottom: 15px;
             right: 15px;
@@ -349,22 +289,34 @@
         }
 
         @keyframes sparkleAnimation {
-            0% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0); }
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
         }
 
         /* Event Info Section */
         .event-info {
             padding: 50px 30px;
-            background: white;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f8ff 100%);
             text-align: center;
+            border-top: 3px dashed rgba(168, 216, 240, 0.3);
         }
 
         .event-title {
             font-family: 'Baloo 2', cursive;
             font-size: 36px;
-            color: #4facfe;
+            color: #2b8fcc;
             margin-bottom: 30px;
         }
 
@@ -377,12 +329,13 @@
         }
 
         .event-card {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: linear-gradient(135deg, #a8d8f0 0%, #d4ebf7 100%);
+            color: #2b5f8c;
             padding: 30px;
             border-radius: 20px;
             min-width: 250px;
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 8px 20px rgba(43, 143, 204, 0.2);
+            border: 3px solid white;
             transition: transform 0.3s ease;
         }
 
@@ -409,13 +362,14 @@
         /* Footer Section */
         .footer {
             padding: 40px 30px;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            background: linear-gradient(135deg, #a8d8f0 0%, #d4ebf7 100%);
             text-align: center;
+            border-top: 3px dashed rgba(255, 255, 255, 0.5);
         }
 
         .footer-message {
             font-size: 24px;
-            color: #555;
+            color: #2b5f8c;
             line-height: 1.8;
             margin-bottom: 30px;
             font-family: 'Baloo 2', cursive;
@@ -445,33 +399,93 @@
             z-index: 1000;
         }
 
-        .deco1 { top: 10%; left: 5%; animation-delay: 0s; }
-        .deco2 { top: 20%; right: 5%; animation-delay: 1s; }
-        .deco3 { top: 50%; left: 2%; animation-delay: 2s; }
-        .deco4 { top: 70%; right: 3%; animation-delay: 0.5s; }
-        .deco5 { bottom: 10%; left: 10%; animation-delay: 1.5s; }
+        .deco1 {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .deco2 {
+            top: 20%;
+            right: 5%;
+            animation-delay: 1s;
+        }
+
+        .deco3 {
+            top: 50%;
+            left: 2%;
+            animation-delay: 2s;
+        }
+
+        .deco4 {
+            top: 70%;
+            right: 3%;
+            animation-delay: 0.5s;
+        }
+
+        .deco5 {
+            bottom: 10%;
+            left: 10%;
+            animation-delay: 1.5s;
+        }
 
         /* Animations */
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(-50%); }
-            50% { transform: translateY(-20px) translateX(-50%); }
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            50% {
+                transform: translateY(-20px) translateX(-50%);
+            }
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.15); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.15);
+            }
         }
 
         /* Confetti Effect */
@@ -493,67 +507,51 @@
             }
         }
 
-        /* Shimmer Effect */
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
 
-        .shimmer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.6), 
-                transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        /* Bounce in Animation */
-        .bounce-in {
-            animation: bounceIn 1s ease-out;
-        }
-
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); }
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header h1 { font-size: 36px; }
-            .story-title { font-size: 28px; }
-            .baby-name { font-size: 40px; }
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .story-title {
+                font-size: 28px;
+            }
+
+            .baby-name {
+                font-size: 40px;
+            }
+
             .photo-row {
                 flex-direction: column !important;
                 gap: 20px;
             }
+
             .photo-container {
                 flex: 1;
                 width: 100%;
             }
+
             .gallery-item {
                 height: 300px;
             }
-            .event-details { flex-direction: column; align-items: center; }
-            .decoration { display: none; }
+
+            .event-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .decoration {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
-            .gallery-item { 
+            .gallery-item {
                 height: 250px;
             }
+
             .cute-quote {
                 font-size: 18px;
                 padding: 20px;
@@ -561,34 +559,37 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Decorative floating elements -->
-    <div class="decoration deco1">🎈</div>
-    <div class="decoration deco2">🧸</div>
-    <div class="decoration deco3">🎁</div>
-    <div class="decoration deco4">⭐</div>
-    <div class="decoration deco5">🎉</div>
+    <div class="decoration deco1">🥑</div>
+    <div class="decoration deco2">🥑</div>
+    <div class="decoration deco3">🥑</div>
+    <div class="decoration deco4">🥑</div>
+    <div class="decoration deco5">🥑</div>
 
     <div class="container">
         <!-- Header -->
         <div class="header">
             <h1>🎊 Thiệp Mời Thôi Nôi 🎊</h1>
-            <p>Kính mời quý khách đến dự tiệc thôi nôi của</p>
+            <p>Trân trọng kính mời ông bà cô chú đến dự buổi tiệc chung vui cùng gia đình con</p>
             <p style="font-size: 24px; margin-top: 10px; font-weight: 600;">Bé Đặng Gia Huy</p>
+            <h2 style="font-size: 56px; font-family: 'Baloo 2', cursive; color: #2b8fcc; text-align: center; margin-top: 20px; text-shadow: 3px 3px 0px rgba(255,255,255,0.8), -1px -1px 0px rgba(168,216,240,0.5); letter-spacing: 3px; font-weight: 700;">🥑🥑 BƠ 🥑🥑</h2>
         </div>
 
 
         <!-- Event Information -->
         <div class="event-info">
-            <h2 class="event-title" style="font-size: 42px; margin-bottom: 40px;">🎉 Thông Tin Sự Kiện 🎉</h2>
-            
+
             <div style="font-size: 50px; margin: 20px 0;">📅</div>
             <p style="font-size: 32px; font-weight: bold; color: #1e5fa8; margin: 15px 0;">Thứ Bảy</p>
             <p style="font-size: 48px; font-weight: bold; color: #4facfe; margin: 20px 0;">15/11/2025</p>
             <p style="font-size: 38px; font-weight: bold; color: #1e5fa8; margin: 20px 0;">Lúc: 17:00</p>
-            
-            <div style="margin: 50px 0; height: 2px; background: linear-gradient(to right, transparent, #4facfe, transparent);"></div>
-            
+
+            <div
+                style="margin: 50px 0; height: 2px; background: linear-gradient(to right, transparent, #4facfe, transparent);">
+            </div>
+
             <div style="font-size: 50px; margin: 20px 0;">📍</div>
             <p style="font-size: 36px; font-weight: bold; color: #4facfe; margin: 15px 0;">TƯ GIA</p>
             <p style="font-size: 32px; font-weight: 600; color: #1e5fa8; margin: 10px 0;">Khóm Mỹ Thới</p>
@@ -597,18 +598,20 @@
 
         <!-- Photo Gallery -->
         <div class="gallery">
-            <h2 class="gallery-title shimmer">📸 Những Khoảnh Khắc Đáng Yêu 📸</h2>
+            <h2 class="gallery-title">📸 Những Khoảnh Khắc Đáng Yêu 📸</h2>
             <div class="gallery-grid">
                 <!-- Row 1 -->
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z6799480639207_c3876cf23022f70bf2cbefbe4b71f8ec.jpg" alt="Bé yêu 1">
+                            <img src="assets/z7194457756642_34ecef3a62fb7a039afa7400734d784a.jpg" alt="Bé yêu 1"
+                                    loading="eager" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
                         <div class="cute-quote">
-                            🌊 Con là giọt nước nhỏ trong dòng sông, giờ đây đã lớn lên mang theo niềm vui cho cả gia đình! 💙
+                            🌊 Con là giọt nước nhỏ trong dòng sông, giờ đây đã lớn lên mang theo niềm vui cho cả gia
+                            đình! 💙
                         </div>
                     </div>
                 </div>
@@ -617,7 +620,8 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z6799480640303_ae0188705313ae7640a314ca1eee205b.jpg" alt="Bé yêu 2">
+                            <img src="assets/z7194457762342_bcbfb8dc84f41c1de005c2fb81c3c23e.jpg" alt="Bé yêu 2"
+                                    loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
@@ -631,12 +635,14 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z6799480643864_52fd7b98f059308e3c6e061aeb0eeef6.jpg" alt="Bé yêu 3">
+                            <img src="assets/z7194457775665_2f07360b6b5f71fcd7dee5c997f7e909.jpg" alt="Bé yêu 3"
+                                    loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
                         <div class="cute-quote">
-                            🎈 Mỗi ngày con lớn lên là mỗi ngày bố mẹ được sống trong hạnh phúc, con là món quà quý giá nhất! 🎁
+                            🎈 Mỗi ngày con lớn lên là mỗi ngày bố mẹ được sống trong hạnh phúc, con là món quà quý giá
+                            nhất! 🎁
                         </div>
                     </div>
                 </div>
@@ -645,12 +651,14 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z6799480651406_ce9fad4ec63bfb7bfbb3d1a33da8bbe9.jpg" alt="Bé yêu 4">
+                            <img src="assets/z7194458810664_e4da0f52483b30e8c86ccd26e63d0b27.jpg" alt="Bé yêu 4"
+                                    loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
                         <div class="cute-quote">
-                            🌾 Con trai khỏe mạnh, tiếng cười trong trẻo như gió thổi qua đồng lúa chín vàng của miền Tây! 🌻
+                            🌾 Con trai khỏe mạnh, tiếng cười trong trẻo như gió thổi qua đồng lúa chín vàng của miền
+                            Tây! 🌻
                         </div>
                     </div>
                 </div>
@@ -659,7 +667,8 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z6799480653271_cf0c2c694ee1935b9013cce5167b4fa4.jpg" alt="Bé yêu 5">
+                            <img src="assets/z7194458816627_7e1ae0bf50aa87222fbc017adac755ef.jpg" alt="Bé yêu 5"
+                                    loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
@@ -673,7 +682,9 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z7194458810664_e4da0f52483b30e8c86ccd26e63d0b27.jpg" alt="Bé yêu 6">
+                            <img src="assets/z7194458810664_e4da0f52483b30e8c86ccd26e63d0b27.jpg" alt="Bé yêu 6"
+                                loading="lazy" width="350" height="350">
+
                         </div>
                     </div>
                     <div class="quote-container">
@@ -687,7 +698,8 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z7194458816627_7e1ae0bf50aa87222fbc017adac755ef.jpg" alt="Bé yêu 7">
+                            <img src="assets/z7194458816627_7e1ae0bf50aa87222fbc017adac755ef.jpg" alt="Bé yêu 7"
+                                loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
@@ -701,12 +713,14 @@
                 <div class="photo-row">
                     <div class="photo-container">
                         <div class="gallery-item">
-                            <img src="assets/z7194458819628_b9eb39fe6a7bf16500280eac611e6b3d.jpg" alt="Bé yêu 8">
+                            <img src="assets/z7194458819628_b9eb39fe6a7bf16500280eac611e6b3d.jpg" alt="Bé yêu 8"
+                                loading="lazy" width="350" height="350">
                         </div>
                     </div>
                     <div class="quote-container">
                         <div class="cute-quote">
-                            🎊 Con ơi, con là niềm tự hào của bố mẹ, là cả thế giới của gia đình. Yêu con nhiều lắm! 💙🌟
+                            🎊 Con ơi, con là niềm tự hào của bố mẹ, là cả thế giới của gia đình. Yêu con nhiều lắm!
+                            💙🌟
                         </div>
                     </div>
                 </div>
@@ -720,7 +734,7 @@
                 <br>
                 Sự hiện diện của quý vị là niềm vinh hạnh lớn nhất! 💙
                 <br>
-                <div class="footer-emoji">💙🎈🎁🧸💙</div>
+                <div class="footer-emoji">💙🥑🥑�💙</div>
             </div>
         </div>
     </div>
@@ -738,7 +752,7 @@
 
         // Enhanced click effect for gallery items with sparkles
         document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function(e) {
+            item.addEventListener('click', function (e) {
                 // Create sparkle effect
                 for (let i = 0; i < 8; i++) {
                     const sparkle = document.createElement('div');
@@ -747,10 +761,10 @@
                     sparkle.style.top = Math.random() * 100 + '%';
                     sparkle.style.animationDelay = (i * 0.1) + 's';
                     this.appendChild(sparkle);
-                    
+
                     setTimeout(() => sparkle.remove(), 1000);
                 }
-                
+
                 // Bounce animation
                 this.style.animation = 'none';
                 setTimeout(() => {
@@ -759,11 +773,11 @@
             });
 
             // Add hover sound effect (visual feedback)
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 this.style.filter = 'brightness(1.1)';
             });
 
-            item.addEventListener('mouseleave', function() {
+            item.addEventListener('mouseleave', function () {
                 this.style.filter = 'brightness(1)';
             });
         });
@@ -784,7 +798,7 @@
 
         // Create floating particles effect
         function createParticle() {
-            const particles = ['💙', '⭐', '🎈', '✨', '🎁', '🧸', '🎊', '🎉', '💫', '🌟'];
+            const particles = ['💙', '⭐', '🥑', '✨', '🎁', '�', '🎊', '🎉', '💫', '🌟', '🥑', '🥑'];
             const particle = document.createElement('div');
             particle.style.position = 'fixed';
             particle.style.fontSize = Math.random() * 15 + 15 + 'px';
@@ -805,15 +819,15 @@
             const interval = setInterval(() => {
                 const elapsed = Date.now() - startTime;
                 const progress = elapsed / duration;
-                
+
                 pos = 110 - (progress * 120);
                 leftPos += (drift / duration) * 16;
-                
+
                 particle.style.top = pos + '%';
                 particle.style.left = leftPos + '%';
                 particle.style.opacity = 1 - progress;
                 particle.style.transform = `rotate(${progress * 360}deg)`;
-                
+
                 if (progress >= 1) {
                     clearInterval(interval);
                     particle.remove();
@@ -823,7 +837,7 @@
 
         // Create bubble effect on scroll
         let lastScrollTop = 0;
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop && Math.random() > 0.7) {
                 createParticle();
@@ -831,13 +845,13 @@
             lastScrollTop = scrollTop;
         }, false);
 
-        // Periodic effects
-        setInterval(createParticle, 2000);
-        setInterval(createConfetti, 3000);
+        // Periodic effects - reduced frequency
+        setInterval(createParticle, 4000);
+        setInterval(createConfetti, 5000);
 
-        // Initial confetti burst
-        for (let i = 0; i < 20; i++) {
-            setTimeout(() => createConfetti(), i * 100);
+        // Initial confetti burst - reduced amount
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => createConfetti(), i * 150);
         }
 
         // Intersection Observer for scroll animations
@@ -864,7 +878,7 @@
         });
 
         // Add ripple effect on click
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const ripple = document.createElement('div');
             ripple.style.position = 'fixed';
             ripple.style.borderRadius = '50%';
@@ -894,4 +908,5 @@
         document.head.appendChild(style);
     </script>
 </body>
+
 </html>
