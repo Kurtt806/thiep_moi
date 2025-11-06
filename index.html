@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Đám Thôi Nôi - Bé Trai Miền Tây</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #a8cef1 0%, #d4e4f7 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "🎈🎈🎈";
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .header h1 {
+            font-family: 'Baloo 2', cursive;
+            color: white;
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .header p {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 40px 30px;
+            background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
+            text-align: center;
+        }
+
+        .story-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 36px;
+            color: #1e5fa8;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .story-title::before,
+        .story-title::after {
+            content: "⭐";
+            position: absolute;
+            font-size: 24px;
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        .story-title::before {
+            left: -40px;
+            top: 0;
+        }
+
+        .story-title::after {
+            right: -40px;
+            top: 0;
+            animation-delay: 0.5s;
+        }
+
+        .story-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            line-height: 2;
+            font-size: 18px;
+            color: #555;
+            text-align: left;
+        }
+
+        .story-content p {
+            margin-bottom: 15px;
+        }
+
+        .story-content strong {
+            color: #4facfe;
+            font-size: 20px;
+        }
+
+        /* Baby Info Section */
+        .baby-info {
+            padding: 40px 30px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .baby-name {
+            font-family: 'Baloo 2', cursive;
+            font-size: 56px;
+            color: #4facfe;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .baby-details {
+            font-size: 22px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .baby-details span {
+            display: inline-block;
+            margin: 10px 20px;
+            font-weight: 600;
+            color: #1e5fa8;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #a8cef1 0%, #d4e4f7 100%);
+        }
+
+        .gallery-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 36px;
+            color: #1e5fa8;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Photo Row Layout */
+        .photo-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .photo-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .photo-container {
+            flex: 0 0 350px;
+        }
+
+        .quote-container {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .cute-quote {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+            position: relative;
+            font-size: 20px;
+            color: #1e5fa8;
+            line-height: 1.8;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .cute-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: #4facfe;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .cute-quote::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid white;
+        }
+
+        .photo-row:nth-child(even) .cute-quote::after {
+            left: auto;
+            right: 50px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            width: 100%;
+            height: 350px;
+            border: 5px solid white;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.3) 0%, rgba(0, 242, 254, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) rotate(3deg) scale(1.05);
+            box-shadow: 0 25px 50px rgba(79, 172, 254, 0.4);
+            border-color: #00f2fe;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .photo-row:nth-child(even) .gallery-item:hover {
+            transform: translateY(-15px) rotate(-3deg) scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: brightness(1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        .gallery-item::after {
+            content: "💙";
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 40px;
+            opacity: 0;
+            transform: scale(0) rotate(-180deg);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* Photo Frame Effect */
+        .gallery-item .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .gallery-item:active .photo-overlay {
+            opacity: 1;
+        }
+
+        /* Sparkle Effect */
+        .gallery-item .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            animation: sparkleAnimation 1s ease-out;
+        }
+
+        @keyframes sparkleAnimation {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        /* Event Info Section */
+        .event-info {
+            padding: 50px 30px;
+            background: white;
+            text-align: center;
+        }
+
+        .event-title {
+            font-family: 'Baloo 2', cursive;
+            font-size: 36px;
+            color: #4facfe;
+            margin-bottom: 30px;
+        }
+
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .event-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            min-width: 250px;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .event-card p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .event-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer Section */
+        .footer {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            text-align: center;
+        }
+
+        .footer-message {
+            font-size: 24px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .footer-emoji {
+            font-size: 50px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* Decorative Elements */
+        .decoration {
+            position: fixed;
+            font-size: 40px;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .deco1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .deco2 { top: 20%; right: 5%; animation-delay: 1s; }
+        .deco3 { top: 50%; left: 2%; animation-delay: 2s; }
+        .deco4 { top: 70%; right: 3%; animation-delay: 0.5s; }
+        .deco5 { bottom: 10%; left: 10%; animation-delay: 1.5s; }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(-50%); }
+            50% { transform: translateY(-20px) translateX(-50%); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            animation: confetti-fall linear forwards;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Shimmer Effect */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.6), 
+                transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Bounce in Animation */
+        .bounce-in {
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .story-title { font-size: 28px; }
+            .baby-name { font-size: 40px; }
+            .photo-row {
+                flex-direction: column !important;
+                gap: 20px;
+            }
+            .photo-container {
+                flex: 1;
+                width: 100%;
+            }
+            .gallery-item {
+                height: 300px;
+            }
+            .event-details { flex-direction: column; align-items: center; }
+            .decoration { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item { 
+                height: 250px;
+            }
+            .cute-quote {
+                font-size: 18px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative floating elements -->
+    <div class="decoration deco1">🎈</div>
+    <div class="decoration deco2">🧸</div>
+    <div class="decoration deco3">🎁</div>
+    <div class="decoration deco4">⭐</div>
+    <div class="decoration deco5">🎉</div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎊 Thiệp Mời Thôi Nôi 🎊</h1>
+            <p>Kính mời quý khách đến dự tiệc thôi nôi của</p>
+            <p style="font-size: 24px; margin-top: 10px; font-weight: 600;">Bé Đặng Gia Huy</p>
+        </div>
+
+
+        <!-- Event Information -->
+        <div class="event-info">
+            <h2 class="event-title" style="font-size: 42px; margin-bottom: 40px;">🎉 Thông Tin Sự Kiện 🎉</h2>
+            
+            <div style="font-size: 50px; margin: 20px 0;">📅</div>
+            <p style="font-size: 32px; font-weight: bold; color: #1e5fa8; margin: 15px 0;">Thứ Bảy</p>
+            <p style="font-size: 48px; font-weight: bold; color: #4facfe; margin: 20px 0;">15/11/2025</p>
+            <p style="font-size: 38px; font-weight: bold; color: #1e5fa8; margin: 20px 0;">Lúc: 17:00</p>
+            
+            <div style="margin: 50px 0; height: 2px; background: linear-gradient(to right, transparent, #4facfe, transparent);"></div>
+            
+            <div style="font-size: 50px; margin: 20px 0;">📍</div>
+            <p style="font-size: 36px; font-weight: bold; color: #4facfe; margin: 15px 0;">TƯ GIA</p>
+            <p style="font-size: 32px; font-weight: 600; color: #1e5fa8; margin: 10px 0;">Khóm Mỹ Thới</p>
+            <p style="font-size: 32px; font-weight: 600; color: #1e5fa8; margin: 10px 0;">Xã Mỹ Thọ</p>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="gallery">
+            <h2 class="gallery-title shimmer">📸 Những Khoảnh Khắc Đáng Yêu 📸</h2>
+            <div class="gallery-grid">
+                <!-- Row 1 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z6799480639207_c3876cf23022f70bf2cbefbe4b71f8ec.jpg" alt="Bé yêu 1">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            🌊 Con là giọt nước nhỏ trong dòng sông, giờ đây đã lớn lên mang theo niềm vui cho cả gia đình! 💙
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z6799480640303_ae0188705313ae7640a314ca1eee205b.jpg" alt="Bé yêu 2">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            ✨ Thiên thần nhỏ của bố mẹ, nụ cười của con rạng rỡ như bầu trời xanh miền Tây! 💙
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z6799480643864_52fd7b98f059308e3c6e061aeb0eeef6.jpg" alt="Bé yêu 3">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            🎈 Mỗi ngày con lớn lên là mỗi ngày bố mẹ được sống trong hạnh phúc, con là món quà quý giá nhất! 🎁
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z6799480651406_ce9fad4ec63bfb7bfbb3d1a33da8bbe9.jpg" alt="Bé yêu 4">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            🌾 Con trai khỏe mạnh, tiếng cười trong trẻo như gió thổi qua đồng lúa chín vàng của miền Tây! 🌻
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z6799480653271_cf0c2c694ee1935b9013cce5167b4fa4.jpg" alt="Bé yêu 5">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            ⭐ Từng giây phút bên con đều là kỷ niệm đẹp, bố mẹ sẽ bên con trên mọi nẻo đường! 💙
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 6 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z7194458810664_e4da0f52483b30e8c86ccd26e63d0b27.jpg" alt="Bé yêu 6">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            🚣 Con là niềm tự hào của bố mẹ, sẽ lớn lên thật cao, thật khỏe như cây dừa bên bờ sông! 🌊
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 7 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z7194458816627_7e1ae0bf50aa87222fbc017adac755ef.jpg" alt="Bé yêu 7">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            💙 Đôi mắt trong veo của con như dòng sông Hậu xanh biếc, sáng ngời và đầy yêu thương! ✨
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 8 -->
+                <div class="photo-row">
+                    <div class="photo-container">
+                        <div class="gallery-item">
+                            <img src="assets/z7194458819628_b9eb39fe6a7bf16500280eac611e6b3d.jpg" alt="Bé yêu 8">
+                        </div>
+                    </div>
+                    <div class="quote-container">
+                        <div class="cute-quote">
+                            🎊 Con ơi, con là niềm tự hào của bố mẹ, là cả thế giới của gia đình. Yêu con nhiều lắm! 💙🌟
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-message">
+                Đến dự buổi tiệc thân mật cùng gia đình chúng tôi!
+                <br>
+                Sự hiện diện của quý vị là niềm vinh hạnh lớn nhất! 💙
+                <br>
+                <div class="footer-emoji">💙🎈🎁🧸💙</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Enhanced click effect for gallery items with sparkles
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Create sparkle effect
+                for (let i = 0; i < 8; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    sparkle.style.animationDelay = (i * 0.1) + 's';
+                    this.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1000);
+                }
+                
+                // Bounce animation
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+
+            // Add hover sound effect (visual feedback)
+            item.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.1)';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.filter = 'brightness(1)';
+            });
+        });
+
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#4facfe', '#00f2fe', '#5dc8f7', '#6db8f5', '#7ea8f3', '#8f98f1', '#a088ef'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 5000);
+        }
+
+        // Create floating particles effect
+        function createParticle() {
+            const particles = ['💙', '⭐', '🎈', '✨', '🎁', '🧸', '🎊', '🎉', '💫', '🌟'];
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.fontSize = Math.random() * 15 + 15 + 'px';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '110%';
+            particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+            particle.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+            document.body.appendChild(particle);
+
+            const duration = Math.random() * 3000 + 3000;
+            const drift = (Math.random() - 0.5) * 100;
+            let pos = 110;
+            let leftPos = parseFloat(particle.style.left);
+            const startTime = Date.now();
+
+            const interval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const progress = elapsed / duration;
+                
+                pos = 110 - (progress * 120);
+                leftPos += (drift / duration) * 16;
+                
+                particle.style.top = pos + '%';
+                particle.style.left = leftPos + '%';
+                particle.style.opacity = 1 - progress;
+                particle.style.transform = `rotate(${progress * 360}deg)`;
+                
+                if (progress >= 1) {
+                    clearInterval(interval);
+                    particle.remove();
+                }
+            }, 16);
+        }
+
+        // Create bubble effect on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && Math.random() > 0.7) {
+                createParticle();
+            }
+            lastScrollTop = scrollTop;
+        }, false);
+
+        // Periodic effects
+        setInterval(createParticle, 2000);
+        setInterval(createConfetti, 3000);
+
+        // Initial confetti burst
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => createConfetti(), i * 100);
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('.baby-info, .event-info, .footer, .photo-row').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Add ripple effect on click
+        document.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'fixed';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(79, 172, 254, 0.5)';
+            ripple.style.width = '20px';
+            ripple.style.height = '20px';
+            ripple.style.left = e.clientX - 10 + 'px';
+            ripple.style.top = e.clientY - 10 + 'px';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.zIndex = '99999';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            document.body.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
